@@ -1,0 +1,12 @@
+interface LogoutRequest {
+  access_token: string;
+}
+
+interface LogoutResponse {
+  success: true;
+  data: {
+    message: string;
+  };
+  message: string;
+  timestamp: string;
+}

@@ -1,0 +1,15 @@
+interface LoginRequest {
+  username: string;
+  password: string;
+  agency: string;
+  mfa_token?: string;
+}
+
+interface LoginResponseData {
+  access_token: string;
+  refresh_token: string;
+  user: User;
+  expires_in: number;
+}
+
+type LoginResponse = ApiSuccessResponse<LoginResponseData>;

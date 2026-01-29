@@ -1,0 +1,7 @@
+// Create indexes for intelligence_documents collection
+db.intelligence_documents.createIndex({ "agency": 1, "created_at": -1 });
+db.intelligence_documents.createIndex({ "classification": 1 });
+db.intelligence_documents.createIndex({ "location.county": 1 });
+db.intelligence_documents.createIndex({ "metadata.correlation_tags": 1 });
+db.intelligence_documents.createIndex({ "metadata.threat_level": 1 });
+db.intelligence_documents.createIndex({ "created_at": -1 });
