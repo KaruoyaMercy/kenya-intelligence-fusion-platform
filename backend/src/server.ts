@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import compression from 'compression';
 import dotenv from 'dotenv';
+import correlationRoutes from './routes/correlation';
 
 // Load environment variables
 dotenv.config();
@@ -60,9 +61,11 @@ app.get('/health', (req, res) => {
   });
 });
 
+
 // API routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/intelligence', intelligenceRoutes);
+app.use('/api/v1/correlation', correlationRoutes);
 
 // Error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
