@@ -11,6 +11,7 @@ dotenv.config();
 
 // Import routes
 import authRoutes from './routes/auth';
+import intelligenceRoutes from './routes/intelligence';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -61,6 +62,7 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/intelligence', intelligenceRoutes);
 
 // Error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
@@ -84,4 +86,3 @@ app.listen(PORT, () => {
 });
 
 export default app;
-
